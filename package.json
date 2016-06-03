@@ -1,0 +1,27 @@
+{
+  "name": "validateformhtml5",
+  "version": "1.0.0",
+  "description": "validate form with html5",
+  "main": "validateFormHTML5.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.schibsted.io:jose-rodriguez/validateFormHTML5.git"
+  },
+  "keywords": [
+    "html",
+    "form",
+    "validate"
+  ],
+  "author": "Chema",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scm-spain/mercadio_front_management/issues"
+  },
+  "homepage": "https://github.com/scm-spain/mercadio_front_management#readme"
+}

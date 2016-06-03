@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validate Form with HTML5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src="validateFormHTML5.js"></script>
+    <style>
+        * {line-height:150%}
+        label,input {display:block}
+        .LabelError {color:#f00;}
+        .InputError {border:1px solid #f00}
+    </style>
+</head>
+
+
+
+<body>
+
+<h1>Form example:</h1>
+<div id="contentForm">
+    <form id="Form1" name="Form1">
+        
+        <label for="InputText">Input</label>
+        <input type="text" id="InputText" name="InputText">
+        
+        <label for="InputTextNorequired">Input no required</label>
+        <input type="text" id="InputTextNorequired" name="InputTextNorequired">
+        
+        <label for="InputTextRequired">Input required</label>
+        <input type="text" id="InputTextRequired" name="InputTextRequired">
+
+        <label for="InputTextNumeric">Input numeric</label>
+        <input type="numeric" id="InputTextNumeric" name="InputTextNumeric">
+
+        <label for="InputTextEmail">Input email</label>
+        <input type="email" id="InputTextEmail" name="InputTextEmail">
+      
+        <input type="submit" value="Lanzar">  
+    </form>
+    
+      
+</div>
+
+<script>
+    
+    window.validate=new validateFormHTML5('Form1',{
+         rules: {
+                    InputTextRequired: {
+                        required:true,
+                        max_length:'10',
+                        min_length:'3'
+                    },
+                    InputTextEmail: {
+                        required:true,
+                        custom:'email'
+                    },
+                    InputTextNumeric: {
+                        required:true,
+                        custom:'numeric'
+                    }
+                },
+        messages: {
+                    InputTextRequired: {
+                        required:'Campo obligatorio',
+                        max_length:'Maximo de 10 caracteres',
+                        min_length:'Minimo de 3 caracteres'
+                    },
+                    InputTextEmail: {
+                        required:'El email es obligatorio'
+                    },
+                    InputTextNumeric: {
+                        custom:'El campo solo afecta números'
+                    }
+        },
+        custom: {
+                    InputTextRequired: {
+                        inputCSS:'InputError',
+                        labelCSS:'LabelError',
+                    }
+        }
+    });
+    
+    console.log(validate);
+    
+    
+    
+</script>
+
+
+</body>
+</html>
