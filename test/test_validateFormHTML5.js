@@ -1,7 +1,10 @@
 /* Test validateFormHTML5 class */
 
 var assert = require("assert");
+var jsdom = require("jsdom").jsdom;
 var validateFormHTML5 = require("../src/validateFormHTML5.js");
+
+
 
 describe("Validate Form with HTML5 by default",function(){
 
@@ -108,5 +111,29 @@ describe("Validate Form with HTML5 by default",function(){
             });
                        
         });
+        
+    
+    
+     it('Create window object', function() {
+        var document = jsdom("hello world");
+        var window = document.defaultView;
+
+        assert(window);
+     });
+     it('Create document', function() {
+        var document = jsdom();
+        var window = document.defaultView;
+
+        assert(document);
+     });
+    
+     it('Create form element', function() {
+        var document = jsdom("<form id='Form1'></form>");
+        var window = document.defaultView;
+        var form=document.getElementById('Form1');
+
+        assert(document.getElementById('Form1'));
+     });
+    
 });
 
