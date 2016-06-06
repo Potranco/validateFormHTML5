@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/scm-spain/mercadio_front_management/issues"
   },
-  "homepage": "https://github.com/scm-spain/mercadio_front_management#readme"
+  "homepage": "https://github.com/scm-spain/mercadio_front_management#readme",
+  "devDependencies": {
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3"
+  }
 }
