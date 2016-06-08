@@ -132,8 +132,17 @@ describe("Validate Form with HTML5 by default",function(){
         var window = document.defaultView;
         var form=document.getElementById('Form1');
 
-        assert(document.getElementById('Form1'));
+        assert(form);
      });
+
+      it('Create input element', function() {
+        var document = jsdom("<form id='Form1'><input type='text' id='inputText'></form>");
+        var window = document.defaultView;
+        var input=document.getElementById('inputText');
+
+        assert(input);
+     });
+    
     
 });
 
