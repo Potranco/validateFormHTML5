@@ -4,7 +4,8 @@ var assert = require("assert");
 var jsdom = require("jsdom").jsdom;
 var validateFormHTML5 = require("../src/validateFormHTML5.js");
 
-
+var document = jsdom("<form id='Form1'><input type='text' id='inputText'></form>");
+var window = document.defaultView;
 
 describe("Validate Form with HTML5 by default",function(){
 
@@ -142,7 +143,29 @@ describe("Validate Form with HTML5 by default",function(){
 
         assert(input);
      });
+
+      it('Create input element', function() {
+        var document = jsdom("<form id='Form1'><input type='text' id='inputText'></form>");
+        var window = document.defaultView;
+        var input=document.getElementById('inputText');
+
+        assert(input);
+     });
     
+      it('Add input element required', function() {
+        
+        console.log(document);
+        window.validate=new validateFormHTML5('Form1',{
+            rules: {
+                       inputText: {
+                           required:true
+                       }
+                   }
+            });
+        var input=document.getElementById('inputText').required;
+        console.log('es required '+input);
+        assert(input);
+     });
     
 });
 
